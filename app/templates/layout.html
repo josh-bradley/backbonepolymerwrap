@@ -1,0 +1,19 @@
+<form>
+    <div>From Account:</div>
+    <select>
+    <% _.each(fromAccounts, function(account){ %>
+        <option><%- account.Name%></option>
+    <%})%>
+    </select>
+    <div>To Account:</div>
+    <select>
+        <% _.each(toAccounts, function(account){ %>
+        <option><%- account.Name%></option>
+        <%})%>
+    </select>
+    <div>
+        <input type="text" id="amount"/><br>
+        <button id="transfer">Transfer</button>
+    </div>
+    <span class="info-box"></span>
+</form>
