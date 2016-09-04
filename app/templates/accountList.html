@@ -1,3 +1,5 @@
+<% _.each(accounts, function(account){ %>
 <div>
-    Hello this is the account list
+    <%- account.Name %> <%- account.Amount %>
 </div>
+<% }) %>

@@ -1,25 +1,28 @@
 var Backbone = require('backbone');
 var TransferView = require('./views/TransferView');
-var AccountListView = require('./views/AccountListView')
+var AccountListView = require('./views/AccountListView');
+var MainView = require('./views/MainView');
 
+var accounts = [
+    { name: 'Everyday', amount: 18.22},
+    { name: 'Savings', amount: 222.33},
+    { name: 'Mortgage', amount: 988.45 }
+];
 
-var main = new TransferView({
+var transferView = new TransferView({
     model: new Backbone.Model({
-        fromAccounts: [
-            { Name: 'Everyday', Amount: 153.90 },
-            { Name: 'Other', Amount: 568.92},
-            { Name: 'Some Account', Amount: 43.56}
-        ],
-        toAccounts: [
-            { Name: 'Mortgage', Amount: 5113.90 },
-            { Name: 'Savings', Amount: 8.92}
-        ]
+        fromAccounts: accounts,
+        toAccounts: accounts
     })
 });
 
 var accountList = new AccountListView({
-   model: new Backbone.Model({})
+   collection: new Backbone.Collection(accounts)
 });
 
-accountList.render();
+var main = new MainView();
+
 main.render();
+
+main.showChildView('accountList', accountList);
+main.showChildView('transfer', transferView);

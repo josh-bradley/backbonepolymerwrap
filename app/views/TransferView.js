@@ -1,9 +1,8 @@
 var Marionette = require('backbone.marionette');
+var Radio = require('backbone.radio');
 
 var TransferView = Marionette.View.extend({
-    el: '#transfer',
-
-    template: require('../templates/layout.html'),
+    template: require('../templates/transferMoney.html'),
 
     ui: {
         form: 'form',
@@ -15,6 +14,8 @@ var TransferView = Marionette.View.extend({
     },
 
     onTransferMoney: function(){
+        var channel = Radio.channel('basic');
+        channel.trigger('account:any', { myData: 'hello world'});
         this.ui.info.text('the money has been transferred.')
     }
 });
