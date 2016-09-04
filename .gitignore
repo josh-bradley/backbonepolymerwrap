@@ -2,3 +2,4 @@
 /node_modules/
 .idea
 /static/js/bundle.js
+/npm-debug.log
