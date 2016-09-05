@@ -3,3 +3,4 @@
 .idea
 /static/js/bundle.js
 /npm-debug.log
+/bower_components/

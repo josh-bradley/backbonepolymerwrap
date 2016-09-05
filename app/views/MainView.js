@@ -8,7 +8,15 @@ var MainView = Marionette.View.extend({
         transfer: '#transferMoney'
     },
 
-    template: require('../templates/main.html')
+    template: require('../templates/main.html'),
+
+    events: {
+        load: 'loadEvent'
+    },
+
+    loadEvent: function(){
+        console.log("the thing has loaded");
+    }
 });
 
 module.exports = MainView;

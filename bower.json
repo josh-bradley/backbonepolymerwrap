@@ -1,0 +1,17 @@
+{
+  "name": "transfer",
+  "description": "Wrapped money transfer",
+  "main": "index.js",
+  "authors": [
+    "Josh <josh-bradley@outlook.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/josh-bradley/backbonepolymerwrap",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
