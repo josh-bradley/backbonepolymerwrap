@@ -28,6 +28,13 @@ var initTransfer = function() {
     Polymer({
         is: 'transfer-money',
 
+        properties: {
+          name: {
+              type: String,
+              value: "hello"
+          }
+        },
+
         ready: function () {
             // console.log('couldnt take one more step');
 

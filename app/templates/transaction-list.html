@@ -1,10 +1,27 @@
 <dom-module id="transaction-list">
     <template>
         <h2>Hello world</h2>
+        <span>{{transactions.1}}</span>
     </template>
     <script>
         Polymer({
-            is:'transaction-list'
+            is:'transaction-list',
+
+            properties: {
+                transactions: {
+                    type: Array,
+                    value: ["hi", "other", "shopping"]
+                },
+                nums: {
+                    type: Array,
+                    value: [1, 2, 3]
+                }
+
+            },
+
+            ready: function(){
+                debugger;
+            }
         })
     </script>
 </dom-module>
