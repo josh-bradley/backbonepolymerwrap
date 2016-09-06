@@ -18,7 +18,7 @@ var TransferView = Marionette.View.extend({
 
     onTransferMoney: function(){
         var channel = Radio.channel('basic');
-        channel.trigger('account:any', { myData: 'hello world'});
+        channel.trigger('account:transfer', { from: this.$("#fromAccount").val()});
         this.ui.info.text('the money has been transferred.')
     }
 });

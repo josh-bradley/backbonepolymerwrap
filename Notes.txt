@@ -17,13 +17,18 @@ TPA
 - Set up catelog. 
 - Get the WCT running on the dev environment. 
 - How will development work alongside TPA will, components be added directly to into TPA or will there be a seperate set of repositories.
-- Build process Vulcanise
+- Build process (Vulcanise)
 - Building the container/base for an app. 
 - How to manage security token/sessionid/ticket (tpa-globals, iron-meta)
 - Eventing 
 - What can be reused from TPA (analytics, globals)
 - Internationalization (TPA version?)
 - Can we get around the using bower issue? 
+- Do we need to build on the BIAB? or can we build somewhere else and push to BIAB
+- Take a Genoma element and migrate all its functionality one to one to a polymer component. 
+- Backbone to Polymer migration guide
+- Skills transition (Can we have documentation/brown bags to help developers make the move. Resources that would be useful for new devs?)
+
 
 Both
 - How will blueprints fit in? Can we generate the API from blueprints? 

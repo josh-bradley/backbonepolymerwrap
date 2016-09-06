@@ -12,8 +12,8 @@ var AccountListView = Marionette.CollectionView.extend({
     initialize: function(){
         var channel = Radio.channel('basic');
 
-        channel.on('account:any', function(data){
-            console.log(data.myData);
+        channel.on('account:transfer', function(data){
+            console.log(data.from);
         });
     }
 });
