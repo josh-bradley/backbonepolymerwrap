@@ -1,0 +1,33 @@
+Hybrid
+- Wrapping vs replace one element at a time with pure Polymer/TPA element. 
+- What is the migration look like? From a component level and from an app level. At the app level at different stages of the migration can we expect to have a mix of pure polymer, pure genoma and hybrid components
+- How will build work Vulcanise mixing in with the existing Genoma build stuff
+- What to do with existing unit tests. If we do a wrapper approach do we test both the wrapped and unwrapped version of the element or just the wrapped. 
+- Events from genoma element to a polymer event. 
+- How to expose the public interface of the Genoma element in the polymer element. 
+- Using imperative or declaritive initialisation.
+- How to best mix the require js stuff in with polymer.
+- Is there a way to use the polymer template as the template for a backbone view. 
+
+TPA
+- Can the styles in the current TPA stuff be overridden by custom styles from Spain. 
+- Requirements for element I.E. minimum level of documentation, unit testing, demo, folder structure, README.md 
+- Investigate the existing yomeon generator for use in TPA. Or use the tpa-item. Do either of these need to be customised for ModelBank
+- Investigate setting up the Travis if not using Travis how will CI work
+- Set up catelog. 
+- Get the WCT running on the dev environment. 
+- How will development work alongside TPA will, components be added directly to into TPA or will there be a seperate set of repositories.
+- Build process Vulcanise
+- Building the container/base for an app. 
+- How to manage security token/sessionid/ticket (tpa-globals, iron-meta)
+- Eventing 
+- What can be reused from TPA (analytics, globals)
+- Internationalization (TPA version?)
+- Can we get around the using bower issue? 
+
+Both
+- How will blueprints fit in? Can we generate the API from blueprints? 
+- What headers, cookies and other is required by the current API.
+
+Questions
+- What is the process for merging back into TPA proper.  
