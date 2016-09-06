@@ -6,7 +6,10 @@ var TransferView = Marionette.View.extend({
 
     ui: {
         form: 'form',
-        info: '.info-box'
+        info: '.info-box',
+        fromAccount: '#fromAccount',
+        toAccount: '#toAccount',
+        amount: '#amount'
     },
 
     triggers: {
@@ -15,7 +18,11 @@ var TransferView = Marionette.View.extend({
 
     onTransferMoney: function(){
         var channel = Radio.channel('basic');
-        channel.trigger('account:any', { myData: 'hello world'});
+        channel.trigger('account:transfer', {
+            fromAccount: this.ui.fromAccount.val(),
+            toAccount: this.ui.toAccount.val(),
+            amount: this.ui.amount.val()
+        });
         this.ui.info.text('the money has been transferred.')
     }
 });

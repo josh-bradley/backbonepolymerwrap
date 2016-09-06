@@ -1,4 +1,5 @@
 <form>
+    <h2>Transfer Money</h2>
     <div>From Account:</div>
     <select id="fromAccount">
     <% _.each(fromAccounts, function(account){ %>
@@ -6,7 +7,7 @@
     <%})%>
     </select>
     <div>To Account:</div>
-    <select>
+    <select id="toAccount">
         <% _.each(toAccounts, function(account){ %>
         <option><%- account.name%></option>
         <%})%>

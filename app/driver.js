@@ -1,10 +1,7 @@
 var Backbone = require('backbone');
 var TransferView = require('./views/TransferView');
-var initTransferMoney = require('./views/TransferViewP');
 var AccountListView = require('./views/AccountListView');
 var MainView = require('./views/MainView');
-
-setTimeout(initTransferMoney, 1000);
 
 var accounts = [
     { name: 'Everyday', amount: 18.22},
@@ -29,3 +26,8 @@ main.render();
 
 main.showChildView('accountList', accountList);
 main.showChildView('transfer', transferView);
+
+window.MyBank = {}
+
+// Saving this module to a globally accessible variable so Polymer elements can get access to it. 
+window.MyBank.backboneRadio = require('backbone.radio');

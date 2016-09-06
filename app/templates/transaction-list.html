@@ -1,7 +1,34 @@
 <dom-module id="transaction-list">
     <template>
-        <h2>Hello world</h2>
-        <span>{{transactions.1}}</span>
+        <style>
+            .transaction-header {
+                border: solid 1px #777;
+                border-left-width:0px;
+                border-right-width:0px;
+            }
+
+            .transaction-item{
+                padding: 15px 0;
+            }
+            .transaction-list .transaction-item:nth-child(2n+1) {
+                background-color:lightblue;
+            }
+        </style>
+        <h2>Transactions</h2>
+        <div class="transaction-list list">
+            <div class="row transaction-header">
+                <div class="col-md-4">From</div>
+                <div class="col-md-4">To</div>
+                <div class="col-md-4">Amount</div>
+            </div>
+            <template is="dom-repeat" items="{{transactions}}">
+                <div class="row transaction-item">
+                    <div class="col-md-4">{{item.fromAccount}}</div>
+                    <div class="col-md-4">{{item.toAccount}}</div>
+                    <div class="col-md-4">{{item.amount}}</div>
+                </div>
+            </template>
+        </div>
     </template>
     <script>
         Polymer({
@@ -10,7 +37,13 @@
             properties: {
                 transactions: {
                     type: Array,
-                    value: ["hi", "other", "shopping"]
+                    value: [
+                        {
+                            fromAccount: 'Everyday',
+                            toAccount: 'Savings',
+                            amount: '$10.00'
+                        }
+                    ]
                 },
                 nums: {
                     type: Array,
@@ -20,9 +53,15 @@
             },
 
             ready: function(){
-                document.addEventListener("account:transfer", function(){
-                    console.log("hello mr man");
-                });
+                var channel = MyBank.backboneRadio.channel('basic');
+
+                channel.on('account:transfer', function(data){
+                    this.push('transactions', {
+                        fromAccount: data.fromAccount,
+                        toAccount: data.toAccount,
+                        amount: data.amount
+                    });
+                }.bind(this));
             }
         })
     </script>
